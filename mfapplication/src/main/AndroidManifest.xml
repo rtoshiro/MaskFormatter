@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.github.rtoshiro.mflibrary"
+<manifest package="com.github.rtoshiro.example.mflibrary"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application

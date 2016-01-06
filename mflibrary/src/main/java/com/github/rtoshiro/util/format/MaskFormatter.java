@@ -7,7 +7,7 @@ import java.util.HashMap;
 /**
  * Created by Tox on 12/8/15.
  */
-public abstract class MaskFormatter {
+public class MaskFormatter {
 
     /**
      * String pattern that represents the mask used by {@link #format(String)} method
