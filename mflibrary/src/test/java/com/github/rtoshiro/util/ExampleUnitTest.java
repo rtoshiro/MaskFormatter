@@ -1,4 +1,4 @@
-package com.github.rtoshiro.mflibrary;
+package com.github.rtoshiro.util;
 
 import org.junit.Test;
 
