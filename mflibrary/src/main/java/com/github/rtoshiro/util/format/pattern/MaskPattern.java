@@ -24,7 +24,7 @@ public class MaskPattern {
         this.pattern = pattern;
     }
 
-    public boolean isValid(char c) {
+    public boolean isValid(String current, char c) {
         return p.matcher(String.valueOf(c)).matches();
     }
 

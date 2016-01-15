@@ -150,7 +150,7 @@ public class MaskFormatter {
     protected int indexOfValidChar(MaskPattern patternMaskChar, String text, int offset) {
         for (int i = offset; i < text.length(); i++) {
             char c = text.charAt(i);
-            if (patternMaskChar.isValid(c))
+            if (patternMaskChar.isValid(text, c))
                 return i;
         }
         return -1;

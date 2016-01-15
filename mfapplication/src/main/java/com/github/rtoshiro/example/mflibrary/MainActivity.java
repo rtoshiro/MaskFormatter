@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
+import com.github.rtoshiro.util.format.MaskFormatter;
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.pattern.MaskPattern;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,9 +29,21 @@ public class MainActivity extends AppCompatActivity {
         this.edit1 = (EditText) findViewById(R.id.edit_1);
 
         edit1.addTextChangedListener(new MaskTextWatcher(edit1, new SimpleMaskFormatter("(NN) NNNN-NNNN")));
-        edit2.addTextChangedListener(new MaskTextWatcher(edit2, new SimpleMaskFormatter("LLLLL")));
-        edit3.addTextChangedListener(new MaskTextWatcher(edit3, new SimpleMaskFormatter("AAAAA")));
+        edit2.addTextChangedListener(new MaskTextWatcher(edit2, new SimpleMaskFormatter("NN/NN/NNNN")));
+
         edit4.addTextChangedListener(new MaskTextWatcher(edit4, new SimpleMaskFormatter("lllll")));
         edit5.addTextChangedListener(new MaskTextWatcher(edit5, new SimpleMaskFormatter("UUUUU")));
+
+        MaskPattern mp03 = new MaskPattern("[0-3]");
+        MaskPattern mp09 = new MaskPattern("[0-9]");
+        MaskPattern mp01 = new MaskPattern("[0-1]");
+
+        MaskFormatter mf = new MaskFormatter("[0-1][0-9]/[0-3][0-9]/[0-9][0-9][0-9][0-9]");
+        mf.registerPattern(mp01);
+        mf.registerPattern(mp03);
+        mf.registerPattern(mp09);
+
+        edit3.addTextChangedListener(new MaskTextWatcher(edit3, mf));
+
     }
 }
