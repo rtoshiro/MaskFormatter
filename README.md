@@ -7,7 +7,7 @@ Min SDK version is 7.
 ### Gradle
 
 ```
-compile 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
+implementation 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
 ```
 
 ```
